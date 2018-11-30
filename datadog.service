@@ -1,0 +1,10 @@
+[Unit]
+Description=Datadog Agent Service
+After=network.target
+
+[Service]
+User=root
+ExecStart=/root/.datadog-agent/bin/agent
+
+[Install]
+WantedBy=multi-user.target
