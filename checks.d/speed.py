@@ -14,9 +14,11 @@ class SpeedCheck(AgentCheck):
         import speedtest
 
         s = speedtest.Speedtest()
-        s.get_best_server()
+        server = s.get_best_server()
+        latency = server['latency']
         down = s.download()
         up = s.upload()
 
         self.gauge('download', down)
         self.gauge('upload', up)
+        self.gauge('ping', latency)
