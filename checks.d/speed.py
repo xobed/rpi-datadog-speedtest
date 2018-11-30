@@ -19,6 +19,6 @@ class SpeedCheck(AgentCheck):
         down = s.download()
         up = s.upload()
 
-        self.gauge('download', down)
-        self.gauge('upload', up)
-        self.gauge('ping', latency)
+        self.gauge('speedtest.download', down)
+        self.gauge('speedtest.upload', up)
+        self.gauge('speedtest.ping', latency)
